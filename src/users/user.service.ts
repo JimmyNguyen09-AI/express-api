@@ -21,4 +21,12 @@ export const userService = {
             return null;
         }
     },
+    findByEmail: async (email: string) => {
+        try {
+            const result = await userDB.select().from(users).where(eq(users.email, email));
+            return result[0] ?? null;
+        } catch {
+            return null;
+        }
+    }
 }
