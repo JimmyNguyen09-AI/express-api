@@ -28,5 +28,13 @@ export const userService = {
         } catch {
             return null;
         }
+    },
+    findById: async (id: string) => {
+        try {
+            const result = await userDB.select().from(users).where(eq(users.id, id))
+            return result[0] ?? null
+        } catch {
+            return null
+        }
     }
 }

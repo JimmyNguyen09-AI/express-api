@@ -18,3 +18,4 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
     res.status(result.success ? 201 : 500).json(result);
 
 }
+
