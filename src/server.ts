@@ -15,4 +15,4 @@ app.use(express.json());
 app.use(cookieParser())
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
-app.listen(5000, () => console.log("Server running on port http://127.0.0.1:5000"));
+app.listen(5000, () => console.log("Server running on port http://0.0.0.1:5000"));
