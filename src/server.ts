@@ -1,13 +1,16 @@
 import express from "express";
 import userRoutes from "./users/user.route";
 import authRoutes from "./auth/auth.route";
+import 'dotenv/config'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 const app = express();
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT;
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS
+    ? process.env.CORS_ALLOWED_ORIGINS.split(',')
+    : ['https://zora-frontend-alpha.vercel.app'];
 app.use(cors({
-    origin: ['https://zora-frontend-alpha.vercel.app'],
+    origin: allowedOrigins,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
