@@ -1,9 +1,10 @@
-import { Router } from 'express';
-import { googleLogin, getCurrentUser } from './auth.controller';
+import { Router } from 'express'
+import { googleLogin, getCurrentUser } from './auth.controller'
 import { requireAuth } from '../middleware/requireAuth'
 
-const router = Router();
+const router = Router()
 
-router.post('/google', googleLogin);
+router.post('/google', googleLogin)
 router.get('/me', requireAuth, getCurrentUser)
-export default router;
+
+export default router
