@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: "https://zora-frontend-alpha.vercel.app",
+    origin: ["https://zora-frontend-alpha.vercel.app", "https://www.jnzora.com"],
     credentials: true
 }))
 
